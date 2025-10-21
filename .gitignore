@@ -1,0 +1,13 @@
+/vendor/
+/storage/logs/*.log
+/storage/cache/*
+/storage/uploads/*
+/storage/backups/*
+/config/database.php
+.env
+.DS_Store
+# 保留空目录
+!/storage/logs/.gitkeep
+!/storage/cache/.gitkeep
+!/storage/uploads/.gitkeep
+!/storage/backups/.gitkeep

@@ -1,0 +1,16 @@
+# Apache 重写规则
+<IfModule mod_rewrite.c>
+  Options -MultiViews
+  RewriteEngine On
+
+  # 忽略已存在的文件和目录
+  RewriteCond %{REQUEST_FILENAME} -f [OR]
+  RewriteCond %{REQUEST_FILENAME} -d
+  RewriteRule ^ - [L]
+
+  # 后台入口：以 admin 开头的路径转给 admin.php
+  RewriteRule ^admin(.*)$ admin.php [QSA,L]
+
+  # 其余请求转给 index.php
+  RewriteRule ^ index.php [QSA,L]
+</IfModule>
